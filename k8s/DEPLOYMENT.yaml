@@ -1,0 +1,29 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: geopoc-deploy
+spec:
+  selector:
+    matchLabels:
+      app: geopoc
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: geopoc
+    spec:
+      containers:
+      - name: geopoc
+        image: motiuma1/geopoc:BUILDNUM
+        env:
+        - name: S3_KEY
+          valueFrom:
+            secretKeyRef:
+               name: s3
+               key: password
+        - name: POSTGRES_PASS
+          valueFrom:
+            secretKeyRef:
+               name: postgres
+               key: password
+

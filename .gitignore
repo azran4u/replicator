@@ -1,0 +1,25 @@
+# passwords
+/k8s/SECRETS.yaml
+
+perf.csv
+~$perf-viewer.xlsx
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+node_modules/
+
+# javascript
+dist/
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv environment variables file
+*.env
+# .env.test

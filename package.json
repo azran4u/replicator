@@ -1,0 +1,48 @@
+{
+  "name": "geo-poc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "test": "npm run build && env ENVIRONMENT=test mocha --timeout 1000000 --require ts-node/register --require source-map-support/register --recursive src/**/*.spec.ts",
+    "test-with-coverage": "tsc && nyc npm run test",
+    "cloud": "mocha --timeout 1000000 --recursive dist/**/*.spec.js"
+  },
+  "author": "eyal azran",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.2.10",
+    "@types/chai-as-promised": "^7.1.2",
+    "@types/faker": "^4.1.11",
+    "@types/geojson": "^7946.0.7",
+    "@types/json2csv": "^5.0.0",
+    "@types/lodash": "^4.14.149",
+    "@types/mapbox-gl": "^1.8.3",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.5.0",
+    "@types/pg": "^7.14.1",
+    "@types/uuid": "^3.4.6",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^7.1.0",
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "@turf/turf": "^5.1.6",
+    "aws-sdk": "^2.675.0",
+    "commander": "^5.1.0",
+    "dotenv": "^8.2.0",
+    "faker": "^4.1.0",
+    "json2csv": "^5.0.0",
+    "lodash": "^4.17.15",
+    "pg": "^7.18.2",
+    "uuid": "^3.4.0",
+    "winston": "^3.2.1"
+  }
+}

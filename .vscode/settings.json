@@ -1,0 +1,30 @@
+{
+    "sqltools.connections": [
+        {
+            "name": "PGSQL",
+            "server": "HOSTNAME.postgres.database.azure.com",
+            "driver": "PostgreSQL",
+            "port": 5432,
+            "database": "dbnamehere",
+            "username": "username@hostname",
+            "askForPassword": false,
+            "password": "password",
+            "connectionTimeout": 15,
+            "pgOptions": {
+                "ssl": "true"
+            }
+        },
+        {
+            "connectionTimeout": 10,
+            "database": "pac_geo_poc_db",
+            "dialect": "PostgreSQL",
+            "isActive": true,
+            "isConnected": true,
+            "name": "geo",
+            "password": "dsgfar241",
+            "port": 5432,
+            "server": "galileo-dbs.postgres.database.azure.com",
+            "username": "pac_geo_poc_usr@galileo-dbs"
+        }
+    ]
+}
