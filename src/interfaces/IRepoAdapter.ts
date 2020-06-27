@@ -15,7 +15,7 @@ export interface IRepoBulk {
     data: any;
 }
 
-export interface IRepoAdapter {
-    getInstance(options: IRepoAdapterOptions): IRepoAdapter;
-    getBulk(sequence: Sequence): Promise<IRepoBulk>; 
+export abstract class IRepoAdapter {
+    constructor(options: IRepoAdapterOptions) { };
+    abstract getBulk(sequence: Sequence): Promise<IRepoBulk>;
 }

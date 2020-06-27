@@ -2,7 +2,8 @@ export interface IDataValidatorOptions {
     schema: Object;
 }
 
-export interface IDataValidator {
-    getInstance(options: IDataValidatorOptions): IDataValidator;
-    validate(data: any): Promise<boolean>; 
+export abstract class IDataValidator {
+    constructor(options: IDataValidatorOptions) { };
+    abstract validate(data: any): Promise<boolean>;
+    abstract getSchema(): Object;
 }

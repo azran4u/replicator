@@ -11,11 +11,11 @@ export interface IDatabaseAdapterOptions {
     connectionTimeoutMillis: number;
 }
 
-export interface IDatabaseAdapter {
-    getInstance(options: IDatabaseAdapterOptions): IDatabaseAdapter;
-    query(query: QueryConfig): Promise<QueryResult>;
-    transaction(queries: QueryConfig[]): Promise<void>;
-    isTableExsits(tableName: string): Promise<boolean>;
-    setSchema(schema: QueryConfig): Promise<void>;
-    getTime(): Promise<Date>;
+export abstract class IDatabaseAdapter {
+    constructor(options: IDatabaseAdapterOptions) {};
+    abstract query(query: QueryConfig): Promise<QueryResult>;
+    abstract transaction(queries: QueryConfig[]): Promise<void>;
+    abstract isTableExsits(tableName: string): Promise<boolean>;
+    abstract setSchema(schema: QueryConfig): Promise<void>;
+    abstract getTime(): Promise<Date>;
 }
