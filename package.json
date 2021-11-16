@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@turf/turf": "^5.1.6",
-    "aws-sdk": "^2.675.0",
+    "aws-sdk": "^2.814.0",
     "commander": "^5.1.0",
     "dotenv": "^8.2.0",
     "faker": "^4.1.0",
